@@ -25,12 +25,20 @@ public class MainApp {
       Car car3 = new Car("car3", 333);
       Car car4 = new Car("car4", 444);
 
+      user1.setCar(car1);
+      user2.setCar(car2);
+      user3.setCar(car3);
+      user4.setCar(car4);
 
+      userService.addCar(car1);
+      userService.addCar(car2);
+      userService.addCar(car3);
+      userService.addCar(car4);
 
-//      userService.add(user1);
-//      userService.add(user2.setCar(car2));
-//      userService.add(user3.setCar(car3).setUser(user3));
-//      userService.add(user4.setCar(car4).setUser(user4));
+      userService.addUser(user1);
+      userService.addUser(user2);
+      userService.addUser(user3);
+      userService.addUser(user4);
 
       List<User> users = userService.listUsers();
       for (User user : users) {
@@ -41,7 +49,7 @@ public class MainApp {
          System.out.println("Car = " + user.getCar().getModel());
          System.out.println();
       }
-
+      System.out.println(userService.findUserByModelAndSeries("car1", 111));
       context.close();
    }
 }
